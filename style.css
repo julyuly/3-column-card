@@ -1,0 +1,155 @@
+:root {
+    --primary-orange:hsl(31, 77%, 52%);
+    --primary-cyan:hsl(184, 100%, 22%);
+    --primary-dark-cyan:hsl(179, 100%, 13%);
+    --neutral-white:hsla(0, 0%, 100%, 0.75);
+    --neutral-light-gray:hsl(0, 0%, 95%);
+    --font-family:'Lexend Deca', sans-serif;
+    --font-family-headings: 'Big Shoulders Display', cursive;
+    --fw-regular:400;
+    --fw-bold:700;
+    --fs-15:0.938rem;
+  }
+ 
+  *, *::before, *::after {
+  box-sizing: border-box;
+}
+
+  * {
+  margin: 0;
+}
+
+  p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.main {
+    display:flex;
+    flex-direction: column;
+    margin:3rem 1rem;
+    font-size: var(--fs-15);
+}
+
+.sedans, .suvs, .luxury {
+    display:flex;
+    flex-direction: column;
+    flex-basis:100%;
+    max-width:100%;
+    padding:2rem;
+    color:var(--neutral-white);
+    margin: 0 1rem;
+    min-height:fit-content;
+    flex-shrink:2;
+  
+}
+.name {
+    font-family: var(--font-family-headings);
+    color:var(--neutral-light-gray);
+    font-weight: var(--fw-bold);
+}
+.intro {
+    font-family: var(--font-family);
+    color:var(--neutral-white);
+    margin:1rem 0;
+    font-weight: var(--fw-regular);
+
+}
+.sedans {
+    background-color:var(--primary-orange);
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.suvs {
+    background-color:var(--primary-cyan) ;
+}
+
+.luxury {
+    background-color: var(--primary-dark-cyan);
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.learn-more {
+    border-radius: 3rem;
+    padding:0.75rem 2rem;
+    font-family: var(--font-family);
+    font-size: var(--fs-15);
+    border:none;
+    margin:1rem 0;
+    
+}
+
+.sedans button {
+    color:var(--primary-orange);
+}
+
+.suvs button {
+    color:var(--primary-cyan);
+}
+
+.luxury button {
+    color:var(--primary-dark-cyan);
+}
+
+.icon {
+    display:flex;
+    max-width:100%;
+    margin:1rem 0;
+}
+
+.name h1, h2 {
+  font-size:2rem;
+}
+
+@media only screen and (min-width:50rem) {
+
+    body {
+        display:flex; 
+        flex-direction:column;
+         justify-content:center;
+         min-height:100vh;
+    }
+    .main {
+        display:grid;
+        grid-template-columns: repeat(3,minmax(200px,1fr));
+        column-gap: 0;
+        margin:0 5rem;
+        
+    }
+
+    .sedans, .suvs, .luxury {
+        margin:0;
+    }
+
+    .sedans {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0.5rem;
+    }
+
+    .luxury {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+
+    .button {
+        margin-top:2rem;
+    }
+
+    .learn-more:hover {
+        background-color: transparent;
+        border:0.1rem solid white;
+        color:var(--neutral-light-gray);
+    }
+}
